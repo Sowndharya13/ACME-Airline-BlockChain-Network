@@ -12,7 +12,7 @@
  // Parameter is a AssetRegistry
 
  const bnUtil = require('../bn-connection-util');
- const ticketsNamespace = 'org.acme.airline.ticket';
+ const ticketNamespace = 'org.acme.airline.ticket';
  const transactionType = 'BookTicket';
    
     // Change this for populating other versions
@@ -25,36 +25,47 @@ if(process.argv.length < 3){
     console.log("Populating Network using a card: ",bnUtil.cardName);
 }
 bnUtil.connect(main);
-
-
-    // Check ticket availability
-    
+    // Check ticket availability 
     function checkAvailability(){
     
+
     // Write a query to check seat availablity in the given flight
   
-      
     }
-
-
-    function bookTicket(registry){
-
+    function main(error){
+        if(error){
+            console.log(error)
+            process.exit(1)
+        }
+        bookTicket('AE101-12-09-2019',4,'FIRSTCLASS','EWR','ATL', new Date() ,'SRM-Agencies');
+    }
+    
+    function bookTicket(flightId, numberOfSeatsToReserve, seatClass, origin, destination, date, key){
      //if available..generate ticketId and mark the tickets
+              
+    
 
+     let tickets = [];
+     const  bnDef = bnUtil.connection.getBusinessNetwork();
+     const  factory = bnDef.getFactory();
 
-    ticketResource.setPropertyValue('ticketNumber','TK001-AE101');
-    ticketResource.setPropertyValue('flightId','AE101-12-09-2019');
-    ticketResource.setPropertyValue('numberOfSeatsBooked','4');
-    ticketResource.setPropertyValue('orgin', 'EWR');
-    ticketResource.setPropertyValue('destination' , 'ATL');
-    ticketResource.setPropertyValue('schedule' , new Date('2019-10-15T21:44Z'));
-    ticketResource.setPropertyValue('participantKey','SRM-Agencies');
-    return registry.add(ticketResource).then(()=>{
-        console.log('Successfully Booked a ticket!!!');
-        bnUtil.disconnect();
+     let transaction = factory.newTransaction(ticketNamespace,transactionType); 
+    // transaction.setPropertyValue('ticketNumber',number);
+     transaction.setPropertyValue('flightId',flightId);
+     transaction.setPropertyValue('numberOfSeatsToReserve',numberOfSeatsToReserve);
+     transaction.setPropertyValue('seatClass',seatClass);
+     transaction.setPropertyValue('orgin', origin);
+     transaction.setPropertyValue('destination' , destination );
+     transaction.setPropertyValue('schedule' , date);
+     transaction.setPropertyValue('participantKey', key);
+     
+     bnUtil.connection.submitTransaction(transaction).then(()=>{
+        console.log('Successfully booked a new ticket  : ',number);
+        //To block the tickets in the flight
+        // updateSeat();
+
     }).catch((error)=>{
         console.log(error);
-        bnUtil.disconnect();
-    });
-}
-
+        bnUtil.connection.disconnect();
+    })
+}  

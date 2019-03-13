@@ -37,7 +37,7 @@
   statement:  
     SELECT  org.acme.airline.aircraft.Aircraft
 }
-
+/*
  query AssignmentOfAircraftWithFlight{
 
    description: "Checks availability of tickets in assigned aircrafts"
@@ -53,3 +53,4 @@ query UpdateTicketStatus {
   description: "Updates ticket number with ticket status"
   
 }
+*/
