@@ -1,0 +1,45 @@
+
+/**
+ * model definition for ticket
+ */
+
+namespace org.acme.airline.ticket
+
+asset ticket identified by ticketId {
+  o String ticketId
+  o Integer ticketNumber 
+  o String flightId
+  o Integer numberOfSeatsBooked 
+  o SeatClass seatClass //Depending on the seatType  - rewards will be included  
+  o DateTime bookingSchedule
+  o TicketStatus ticketStatus 
+  o Integer rewardPointForTicket 
+}
+
+enum SeatClass{
+  o FIRSTCLASS
+  o BUSINESSCLASS
+  o ECONOMYCLASS 
+}
+
+enum TicketStatus{
+  o BOOKED 
+  o CANCELLED
+  o BOARDED
+}
+
+transaction BookTicket{
+  o String flightId
+  o Integer numberOfSeatsBooked 
+  o SeatClass seatClass
+  o String  origin
+  o String  destination 
+  o DateTime schedule
+  o String participantKey
+}
+event TicketBooked {
+  o String ticketId 
+  o String participantKey
+} 
+
+
