@@ -23,7 +23,6 @@ participant B2BPartner extends ACMEParticipant {
   /** Additional Attributes */
   o Integer balanceRewardPoints
 }
-
 event redeemRewardPoints{
   o Integer pointsRedeemed
 }
@@ -31,28 +30,5 @@ event redeemRewardPoints{
 event allocateRewardPoints{
   o Integer balanceRewardPoints
 }
-
 event transferRewardPoints{
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/**
- * Exercise-1
- * Create a copy of v2 and call it v21
- * In the 
- */
