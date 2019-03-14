@@ -1,23 +1,7 @@
-/*
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
-/**
- * Write your model definitions here
- */
 
 namespace org.acme.airline.ticket
-import org.acme.airline.aircraft.Aircraft
+//import org.acme.airline.aircraft.Aircraft
 import org.acme.airline.flight.Flight
 import org.acme.airline.participant.B2BPartner
 
@@ -30,10 +14,10 @@ asset Ticket identified by ticketId {
   o DateTime timeOfBooking
   o TicketStatus ticketStatus default = "AVAILABLE"
   o Integer rewardPointForTicket 
-   --> Aircraft aircraft 
    --> Flight flight
    --> B2BPartner agencyName
-}
+//
+ }
 
 enum SeatClass{
   o FIRSTCLASS
@@ -43,21 +27,27 @@ enum SeatClass{
 enum TicketStatus{
   o AVAILABLE 
   o BOOKED 
-  o CANCELLED
-  o BOARDED
+  o CANCELLED 
+  o BOARDED 
 }
 transaction BookTicket{
-  -->Flight flightId // 1
+ // -->Flight flightId // 1
   o Integer numberOfSeatsToReserve   // 2
   o SeatClass seatClass  // 3
   o String  origin  // 4
   o String  destination   // 5
   o DateTime timeOfBooking  // 6
-  --> B2BPartner partnerAgencyName  // 7
+  //--> B2BPartner partnerAgencyName  // 7
 }
 
 event TicketBooked {
   o String ticketId 
-  --> B2BPartner agencyName
-
+ // --> B2BPartner agencyName
 } 
+
+event allocateRewardPoints{
+  o String participantKey
+  o Integer balanceRewardPoints
+}
+
+
