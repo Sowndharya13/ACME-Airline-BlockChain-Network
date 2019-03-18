@@ -2,8 +2,8 @@
   "engines": {
     "composer": "^0.20.7"
   },
-  "name": "airlinev12",
-  "version": "0.0.3",
+  "name": "airlinev13",
+  "version": "0.0.1",
   "description": "This is airlinev10 version 3 - Implementation of Reward Points",
   "scripts": {
     "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/airlinev12.bna",

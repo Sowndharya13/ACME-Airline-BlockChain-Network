@@ -16,12 +16,28 @@
   	  WHERE   (flightNumber == _$flight_number)
   } 
 
-  query FlightsOriginAndDestination {
-   description: "Returns all flights in the registry"
+/* 
+  query CheckSeatAvilabilityInAircraft{
+    description: "Returns true if seats are available"
+    statement: 
+      SELECT  org.acme.airline.aircraft.Aircraft
+      WHERE ()
+  }
+
+
+
+
+
+
+
+
+  query CheckFlightsOriginAndDestination {
+   description: "Returns all flights in the registry that matches with the ticket booking request"
    statement:  
       SELECT  org.acme.airline.flight.Flight
-  	  WHERE   (route.origin == _$origin_airport AND route.destination  == _$destination_airport )
+  	  WHERE  (aircraft != '' AND route.origin == _$origin AND route.destination  == _$destination) 
   }
+ //  AND flightId LIKE [A-Z][A-Z][0-9][0-9][0-9]_$dateOfJourney
 
  query FlightsOriginAndDestinationOrdered {
    description: "Returns all flights in the registry"
@@ -30,14 +46,14 @@
   	  WHERE   (route.origin == _$origin_airport AND route.destination  == _$destination_airport)
       ORDER BY [flightNumber ASC]
   } 
+ 
 
 
-  query AllAircrafts {
-  description: "Returns all aircrafts in the registry"
-  statement:  
-    SELECT  org.acme.airline.aircraft.Aircraft
-}
 /*
+
+
+/*
+ 
  query AssignmentOfAircraftWithFlight{
 
    description: "Checks availability of tickets in assigned aircrafts"

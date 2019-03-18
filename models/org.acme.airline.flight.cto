@@ -6,9 +6,9 @@ asset Flight identified by flightId{
   o String flightNumber
   o Route route
   o String[] aliasFlightNumber
-  o String flightId regex = /[A-Z][A-Z][0-9][0-9][0-9]-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01])-[0-9][0-9]/
-  --> Aircraft aircraft  //removed optional keyword to maintain every flights under an aircraft to maintain tickets.
-  
+  o String flightId regex = /[A-Z][A-Z][0-9][0-9][0-9]-[0-9][0-9]-[0-3][0-9]-[0-9][0-9][0-9][0-9]/
+  --> Aircraft aircraft optional //removed optional keyword to maintain every flights under an aircraft to maintain tickets.
+
 }
 
 concept Route {
