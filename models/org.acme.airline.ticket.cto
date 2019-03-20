@@ -9,13 +9,15 @@ namespace org.acme.airline.ticket
 
 asset Ticket identified by ticketId {
   o String ticketId
-  o Integer numberOfSeatsBooked 
+  o Integer numberOfSeatsBooked range = [1,]
   o SeatClass seatClass //Depending on the seatType  - rewards will be included  
   o TicketStatus ticketStatus
+  o String  origin regex = /[A-Z][A-Z][A-Z]/
+  o String  destination  regex = /[A-Z][A-Z][A-Z]/
+  o DateTime dateOfJourney 
   o Integer rewardPointForTicket 
    //--> Flight flightId
    //--> B2BPartner participantKey
-
  }
 
 enum SeatClass{

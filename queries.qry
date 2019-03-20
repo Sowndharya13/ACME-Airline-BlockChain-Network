@@ -37,7 +37,7 @@
    description: "Returns all flights in the registry that matches with the ticket booking request"
    statement:  
       SELECT  org.acme.airline.flight.Flight
-  	  WHERE  (aircraft != '' AND route.origin == _$origin AND route.destination  == _$destination) 
+  	  WHERE  (route.origin == _$origin AND route.destination  == _$destination) 
   }
  //  AND flightId LIKE [A-Z][A-Z][0-9][0-9][0-9]_$dateOfJourney
 
