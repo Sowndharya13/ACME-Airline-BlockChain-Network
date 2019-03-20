@@ -2,10 +2,11 @@ env:
     node: true
     mocha: true
 extends: 'eslint:recommended'
+
 parserOptions:
     ecmaVersion: 8
-    sourceType:
-        - script
+    sourceType: 
+        - module
 globals:
     getFactory: true
     getSerializer: true

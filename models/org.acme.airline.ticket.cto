@@ -3,19 +3,18 @@
 namespace org.acme.airline.ticket
 
 // import org.acme.airline.aircraft.Aircraft
-   import org.acme.airline.flight.Flight
- import org.acme.airline.participant.B2BPartner
+  // import org.acme.airline.flight.Flight
+// import org.acme.airline.participant.B2BPartner
 
 
 asset Ticket identified by ticketId {
   o String ticketId
   o Integer numberOfSeatsBooked 
   o SeatClass seatClass //Depending on the seatType  - rewards will be included  
-  o DateTime timeOfBooking
-  o TicketStatus ticketStatus default = "AVAILABLE"
+  o TicketStatus ticketStatus
   o Integer rewardPointForTicket 
-   --> Flight flightId
-   --> B2BPartner participantKey
+   //--> Flight flightId
+   //--> B2BPartner participantKey
 
  }
 
@@ -31,22 +30,19 @@ enum TicketStatus{
 }
 transaction BookTicket{
  // -->Flight flightId // 1
-  o Integer numberOfSeatsToReserve range = [1,10]  // 2
-  o SeatClass seatClass  // 3
-  o String  origin  regex = /[A-Z][A-Z][A-Z]/// 4
-  o String  destination  regex = /[A-Z][A-Z][A-Z]/ // 5
-  o String dateOfJourney regex= /[0-9][0-9]-[0-3][0-9]-[0-9][0-9][0-9][0-9]/ //7 in format (MM/DD/YEAR)
-    //--> B2BPartner agencyName  // 7
+  o Integer numberOfSeatsToReserve 
+  o SeatClass seatClass 
+  o String  origin 
+  o String  destination  
+  o DateTime dateOfJourney 
 }
 
 event TicketBooked {
   o String ticketId 
-  --> B2BPartner participantKey
+  //--> B2BPartner participantKey
 } 
 
 event allocateRewardPoints{
-  o String participantKey
-  o Integer balanceRewardPoints
+  // o String participantKey
+  // o Integer balanceRewardPoints
 }
-
-

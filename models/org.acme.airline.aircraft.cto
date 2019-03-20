@@ -21,15 +21,3 @@ enum Ownership {
 }
 
 
-
-/****Data for testing ***
-
-{
-  "$class": "org.acme.airline.aircraft.Aircraft",
-  "aircraftId": "CRAFT001",
-  "ownershipType": "LEASED",
-  "firstClassSeats": 10,
-  "businessClassSeats": 40,
-  "economyClassSeats": 100
-}
-*/
