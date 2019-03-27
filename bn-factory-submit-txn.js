@@ -11,17 +11,17 @@
  * 
  * Pre-Req
  * 1. Start the fabric
- * 2. Deploy & start airlinev7
+ * 2. Deploy & start airlinev14
  * 3. Start the REST Server
  *     
- *    composer-rest-server -c admin@airlinev7 -n never -u true -w true
+ *    composer-rest-server -c admin@airlinev14 -n never -u true -w true
  * 
  * 4. Make sure there is no Flight resource with id="AE101-05-12-2019"
  *    Delete it if you find one - Remember the code for CreateFlight
  *    Transaction has the flightId hardcoded :-)
  * 
  * Demo Steps
- * 1. Use the bn-connection-util to create the connection to airlinev7
+ * 1. Use the bn-connection-util to create the connection to airlinev14
  * 2. Get the Busines Network Definition from Runtime
  * 3. Get the factory from the Business Network definition
  * 4. Create a new Transaction instance
@@ -35,7 +35,7 @@
  const namespace = "org.acme.airline.flight";
  const transactionType = "CreateFlight";
 
-// 1. Connect to airlinev7
+// 1. Connect to airlinev14
 const bnUtil = require('./bn-connection-util');
 bnUtil.connect(main);
 

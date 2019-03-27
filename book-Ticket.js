@@ -17,9 +17,9 @@
  const transactionType = 'BookTicket';
    
     // Change this for populating other versions
-bnUtil.cardName='admin@airlinev12';
+bnUtil.cardName='admin@airlinev14';
 if(process.argv.length < 3){
-    console.log("Usage: node populate-acme-airline   <card-name> ")
+    console.log("Usage: node populate-acme-airline <card-name> ")
     console.log("Populating Network using a card: ",bnUtil.cardName);
 } else {
     bnUtil.cardName = process.argv[2];
@@ -35,7 +35,7 @@ bnUtil.connect(main);
             console.log(error)
             process.exit(1)
         }
-        bookTicket('AE101-12-09-2019',4,'FIRSTCLASS','EWR','ATL','SRM-Agencies');
+        bookTicket('AE178-12-09-2019',4,'FIRSTCLASS','EWR','ATL','SRM-Agencies');
     }
     function bookTicket(flightId, numberOfSeatsToReserve, seatClass, origin, destination, partnerAgencyName){
      //if available..generate ticketId and mark the tickets

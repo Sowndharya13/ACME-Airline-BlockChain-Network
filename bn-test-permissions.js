@@ -20,7 +20,7 @@
  const namespace = "org.acme.airline.flight";
  const transactionType = "CreateFlight";
 
-// 1. Connect to airlinev7
+// 1. Connect to airlinev14
 const bnUtil = require('./bn-connection-util');
 
 if(process.argv.length < 4){

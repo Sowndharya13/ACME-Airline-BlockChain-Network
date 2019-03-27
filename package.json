@@ -3,13 +3,13 @@
     "composer": "^0.20.7"
   },
   "name": "airlinev14",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "parserOptions": {
     "sourceType": "module"
   },
   "description": "This is airlinev10 version 3 - Implementation of Reward Points",
   "scripts": {
-    "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/airlinev12.bna",
+    "prepublish": "mkdirp ./dist && composer archive create --sourceType dir --sourceName . -a ./dist/airlinev14.bna",
     "pretest": "npm run lint",
     "lint": "eslint .",
     "test": "nyc mocha -t 0 test/*.js && cucumber-js"

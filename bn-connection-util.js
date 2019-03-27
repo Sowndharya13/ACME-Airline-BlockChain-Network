@@ -18,14 +18,14 @@
  * Purpose of this utility:
  * Boilerplate code to keep the other sample files CLEAN :)
  * You may change the constants in this code to connect to
- * your apps instead of the default airlinev7
+ * your apps instead of the default airlinev14
  */
  module.exports = {
     // Properties used for creating instance of the BN connection
     cardStore : require('composer-common').FileSystemCardStore,
     BusinessNetworkConnection : require('composer-client').BusinessNetworkConnection,
     // Used for connect()
-    cardName : "admin@airlinev7",
+    cardName : "admin@airlinev14",
    
     // Holds the Business Network Connection
     connection: {},

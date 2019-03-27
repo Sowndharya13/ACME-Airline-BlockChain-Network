@@ -14,7 +14,7 @@ const transactionType = 'CreateFlight';
 // This creates the business network connection object
 // and calls connect() on it. Calls the callback method 
 // 'main' with error
-bnUtil.cardName='admin@airlinev8';
+bnUtil.cardName='admin@airlinev14';
 if(process.argv.length < 3){
     console.log("Usage: node populate-acme-airline   <card-name> ")
     console.log("Populating Network using a card: ",bnUtil.cardName);

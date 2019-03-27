@@ -21,7 +21,7 @@
 
 const bnUtil = require('./bn-connection-util');
 
-// #1 Connect to the airlinev8
+// #1 Connect to the airlinev14
 bnUtil.cardName='admin@airlinev13';
 bnUtil.connect(main);
 

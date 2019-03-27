@@ -11,20 +11,20 @@
  * Demonstrates the use of admin connection to update an app
  * 
  **** Runtime has already been installed
- **** airlinev7@0.0.1.bna deployed and currently active
+ **** airlinev14@0.0.1.bna deployed and currently active
  *
  * 1. Create the Admin Connection instance
  * 2. Connect
  * 3. Create the Business Network Definition Object
- * 4. Update the airlinev7 model in runtime
+ * 4. Update the airlinev14 model in runtime
  * 5. Disconnect
  */
 const AdminConnection = require('composer-admin').AdminConnection;
 const BusinessNetworkDefinition = require('composer-common').BusinessNetworkDefinition;
 
 const cardNameForPeerAdmin = "PeerAdmin@hlfv1";
-const appName = "airlinev7";
-// This where I have the archive file for v2.0 of airlinev7
+const appName = "airlinev14";
+// This where I have the archive file for v2.0 of airlinev14
 // CHANGE THIS DIRECTORY FOR YOUR Model Project
 const bnaDirectory = "/AIRLINE v7 Poroject Folder/";
 

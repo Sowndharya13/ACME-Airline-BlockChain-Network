@@ -106,3 +106,12 @@ rule ACMEPersonnelPermission {
 //   condition: (p.department=='Logistics')
 //   action: ALLOW
 // }
+
+// rule B2BPartnerPermission {
+//   description: "only ACME personnel can book a ticket"
+//   participant(p): "org.acme.airline.participant.B2BPartner"
+//   operation: READ CREATE UPDATE
+//   resource(r): "org.acme.airline.ticket.*"
+//   transaction: "org.acme.airline.flight.BookTicket"
+//   action: ALLOW
+// }

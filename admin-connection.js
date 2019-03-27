@@ -13,8 +13,8 @@
  * 2. Connect as the PeerAdmin
  * 3. List the deployed Business Network Apps
  * 4. Disconnect 
- * 5. Connect as the Network Admin for airlinev7
- * 6. Ping airlinev7
+ * 5. Connect as the Network Admin for airlinev14
+ * 6. Ping airlinev14
  * 7. Disconnect
  */
 
@@ -23,8 +23,8 @@ const AdminConnection = require('composer-admin').AdminConnection;
 
 // Used as the card for all calls
 const   cardNameForPeerAdmin   = "PeerAdmin@hlfv1";
-const   cardNameForNetworkAdmin   = "admin@airlinev7";
-const   appToBePinged = "airlinev7";
+const   cardNameForNetworkAdmin   = "admin@airlinev14";
+const   appToBePinged = "airlinev14";
 
 // 1. Create Admin Connection object for the fabric
 var walletType = { type: 'composer-wallet-filesystem' }

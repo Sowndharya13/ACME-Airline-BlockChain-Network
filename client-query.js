@@ -18,14 +18,17 @@
 
 const bnUtil = require('./bn-connection-util');
 
-// #1 Connect to the airlinev8
-bnUtil.cardName='admin@airlinev8';
+// #1 Connect to the airlinev14
+bnUtil.cardName='admin@airlinev14';
 bnUtil.connect(main);
 
 function main(error){
     // for clarity sake - ignored the error
 
     // #2 Execute the named query : AllFlights
+    console.log("inside main")
+
+
 
     return bnUtil.connection.query('AllFlights').then((results)=>{
 
@@ -39,9 +42,9 @@ function main(error){
     }).then((qry)=>{
 
         // #4 Execute the query
-        return bnUtil.connection.query(qry,{id:'CRAFT01'});
+        return bnUtil.connection.query(qry,{id:'CRAFT001'});
     }).then((result)=>{
-        console.log('Received aircraft count:', result.length);
+         console.log('Received aircraft count:', result.length);
         if(result.length > 0) console.log(result[0].aircraftId);
         bnUtil.connection.disconnect();
     }).catch((error)=>{

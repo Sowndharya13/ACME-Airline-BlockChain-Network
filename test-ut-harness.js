@@ -17,7 +17,7 @@
  */
 const utHarness = require('./ut-harness');
 
-var modelFolder = 'C:/Users/Rajeev/Documents/Course/Hyperledger-Course/workspace/HLF-Course-Domain-Model/airlinev7';
+var modelFolder = 'C:/Users/Rajeev/Documents/Course/Hyperledger-Course/workspace/HLF-Course-Domain-Model/airlinev14';
 //var modelFolder = '';
 
 

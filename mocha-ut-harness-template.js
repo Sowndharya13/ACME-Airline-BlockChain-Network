@@ -10,7 +10,7 @@ var assert = require('chai').assert;
 const utHarness = require('./ut-harness');
 
 // This points to the model project folder
-var modelFolder = 'C:/Users/Rajeev/Documents/Course/Hyperledger-Course/workspace/HLF-Course-Domain-Model/airlinev7';
+var modelFolder = 'C:/Users/Rajeev/Documents/Course/Hyperledger-Course/workspace/HLF-Course-Domain-Model/airlinev14';
 
 var adminConnection = {}
 var businessNetworkConnection = {}
