@@ -8,9 +8,9 @@ asset Aircraft identified by aircraftId {
   o Ownership   ownershipType default="LEASED"
 
   // Number of seats per class 
-  o Integer     FIRSTCLASS      range = [5,15] //Available = 10
-  o Integer     BUSINESSCLASS   range = [5,20] // Availbale = 15
-  o Integer     ECONOMYCLASS    range = [30,60]  // Available = 30
+  o Integer     FIRSTCLASS      range = [1,15] //Available = 10
+  o Integer     BUSINESSCLASS   range = [1,20] // Availbale = 15
+  o Integer     ECONOMYCLASS    range = [1,60]  // Available = 30
 
   o String      nickName  optional 
 }

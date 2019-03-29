@@ -4,7 +4,7 @@ namespace org.acme.airline.ticket
 
 // import org.acme.airline.aircraft.Aircraft
    import org.acme.airline.flight.Flight
- // import org.acme.airline.participant.B2BPartner
+  import org.acme.airline.participant.B2BPartner
 
 
 asset Ticket identified by ticketId {
@@ -16,8 +16,8 @@ asset Ticket identified by ticketId {
   o String  destination  regex = /[A-Z][A-Z][A-Z]/
   o DateTime dateOfJourney 
   o Integer rewardPointForTicket 
-  --> Flight[] flightIdentity
- // o B2BPartner agencyName
+  o String flightIdentity
+  o String participantKey
 }
 
 enum SeatClass{
@@ -37,7 +37,7 @@ transaction BookTicket{
   o String  origin 
   o String  destination  
   o DateTime dateOfJourney
- // --> B2BPartner participantKey
+  --> B2BPartner participantKey
 }
 
 event TicketBooked {
